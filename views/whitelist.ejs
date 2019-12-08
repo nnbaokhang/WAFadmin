@@ -1,0 +1,38 @@
+<form  action="/whitelistip" method="post">
+    <div class="form-group">
+        <label for="whitelistip">Add White List IP</label><br>
+        <input class="form-control" id="whitelistip" name="ip">
+    </div>
+    <input type="submit" value="OK">
+</form>
+
+<div class="form-group">
+    <label for="whitelistiprange">White List IP Range</label>
+    <br>
+    <textarea class="form-control rounded-0" id="whitelistiprange" rows="10"></textarea>
+</div>
+
+<form  action="/whitelistip/removeWhiteList" method="post">
+    <div class="form-group">
+        <label for="whitelistip">Remove White List IP</label><br>
+        <input class="form-control"  name="ip">
+    </div>
+    <input type="submit" value="OK">
+</form>
+
+<a href="/">Go to main</a>
+<a href="/blacklistip">Go to black list</a>
+
+<script>
+
+    function getThis(){
+        var elem = document.getElementById("whitelistiprange");
+        <% if (typeof ips == 'object') { %>
+        <% ips.forEach((ip) => { %>
+        elem.innerHTML = elem.innerHTML + '<%= ip %>' + "\n"
+        <% }) %>
+        <% } %>
+    }
+
+    getThis()
+</script>
