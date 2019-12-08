@@ -6,7 +6,10 @@ var blacklistipSchema = mongoose.Schema({
         type:String,
         required:true,
         unique:true
+    },
+    reason:{
+        type:String,
     }
 })
 
-var blacklistip = module.exports = mongoose.model('badips',blacklistipSchema)
+var blacklistip = module.exports = mongoose.model('blacklistips',blacklistipSchema)
