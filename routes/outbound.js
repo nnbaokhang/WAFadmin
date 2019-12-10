@@ -7,9 +7,9 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
     //Load all the black list here and send to frontz
-    res.render('security-group',{title: 'Express'})
+    res.render('outbound',{title: 'Express'})
 });
 
 
-
 module.exports = router;
+

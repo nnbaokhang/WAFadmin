@@ -1,1 +1,37 @@
-<h>Welcome to inbound</h><br>
+<form  action="/inbound" method="post">
+    <div class="form-group">
+        <label for="inbound">Add inbound rule</label><br>
+        <input class="form-control" id="inbound" name="inbound">
+    </div>
+    <input type="submit" value="OK">
+</form>
+
+<div class="form-group">
+    <label for="inboundrules">List of inbound rule</label>
+    <br>
+    <textarea class="form-control rounded-0" id="listofinbound" rows="10"></textarea>
+</div>
+
+<form  action="/inbound/remove" method="post">
+    <div class="form-group">
+        <label for="inbound">Remove inbound rules</label><br>
+        <input class="form-control"  name="inbound">
+    </div>
+    <input type="submit" value="OK">
+</form>
+
+<a href="/">Go to main</a>
+<a href="/securitygroup">Go back to security-group</a>
+<script>
+
+    function getThis(){
+        var elem = document.getElementById("listofinbound");
+        <% if (typeof table_rule == 'object') { %>
+        <% table_rule.forEach((rule) => { %>
+        elem.innerHTML = elem.innerHTML + '<%= rule %>' + "\n"
+        <% }) %>
+        <% } %>
+    }
+
+    getThis()
+</script>
