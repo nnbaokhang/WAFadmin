@@ -1,0 +1,22 @@
+
+<div class="form-group">
+    <label for="suspiciousiprange">Suspicious List IP Range</label>
+    <br>
+    <textarea class="form-control rounded-0" id="suspiciousiprange" rows="10"></textarea>
+</div>
+
+
+<a href="/">Go to main</a>
+<script>
+
+    function getThis(){
+        var elem = document.getElementById("suspiciousiprange");
+        <% if (typeof ips == 'object') { %>
+        <% ips.forEach((ip) => { %>
+        elem.innerHTML = elem.innerHTML + '<%= ip.ip %>' + '   |   '  + '<%= ip.reason%>' + "\n"
+        <% }) %>
+        <% } %>
+    }
+    getThis()
+
+</script>

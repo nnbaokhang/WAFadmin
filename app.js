@@ -8,6 +8,7 @@ var whiteRouter = require('./routes/whitelistip');
 var blackRouter = require('./routes/blacklistip');
 var indexRouter = require('./routes/index')
 var securityGroupRouter = require('./routes/securitygroup')
+var suspiciousIPRouter = require('./routes/suspiciousip')
 var bodyParser = require('body-parser');
 
 var app = express();
@@ -31,6 +32,7 @@ app.use('/', indexRouter);
 app.use('/securitygroup',securityGroupRouter)
 app.use('/whitelistip', whiteRouter);
 app.use('/blacklistip', blackRouter);
+app.use('/suspiciousip',suspiciousIPRouter)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
