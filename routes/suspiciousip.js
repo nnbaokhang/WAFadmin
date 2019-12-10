@@ -17,8 +17,6 @@ router.get('/', function(req, res, next) {
         })
     }).then(function()
         {
-            console.log(typeof (listIP))
-            console.log(listIP)
             res.render('suspiciousip', {title: 'Express', ips: listIP});
         }
     )
