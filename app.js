@@ -8,12 +8,9 @@ var whiteRouter = require('./routes/whitelistip');
 var blackRouter = require('./routes/blacklistip');
 var indexRouter = require('./routes/index')
 var securityGroupRouter = require('./routes/securitygroup')
-<<<<<<< HEAD
-var suspiciousIPRouter = require('./routes/suspiciousip')
-=======
 var inboundRouter = require('./routes/inbound')
 var outboundRouter = require('./routes/outbound')
->>>>>>> 543b25348f21009e3a100f278bdd76affeaa0665
+var suspiciousIPRouter = require('./routes/suspiciousip')
 var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.json());
@@ -36,13 +33,11 @@ app.use('/', indexRouter);
 app.use('/securitygroup',securityGroupRouter)
 app.use('/whitelistip', whiteRouter);
 app.use('/blacklistip', blackRouter);
-<<<<<<< HEAD
 app.use('/suspiciousip',suspiciousIPRouter)
-=======
+
 app.use('/inbound',inboundRouter)
 app.use('/outbound',outboundRouter)
 
->>>>>>> 543b25348f21009e3a100f278bdd76affeaa0665
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
