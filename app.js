@@ -8,8 +8,9 @@ var whiteRouter = require('./routes/whitelistip');
 var blackRouter = require('./routes/blacklistip');
 var indexRouter = require('./routes/index')
 var securityGroupRouter = require('./routes/securitygroup')
+var inboundRouter = require('./routes/inbound')
+var outboundRouter = require('./routes/outbound')
 var bodyParser = require('body-parser');
-
 var app = express();
 app.use(bodyParser.json());
 uri="mongodb://localhost:27017/WAF"
@@ -31,6 +32,9 @@ app.use('/', indexRouter);
 app.use('/securitygroup',securityGroupRouter)
 app.use('/whitelistip', whiteRouter);
 app.use('/blacklistip', blackRouter);
+app.use('/inbound',inboundRouter)
+app.use('/outbound',outboundRouter)
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
