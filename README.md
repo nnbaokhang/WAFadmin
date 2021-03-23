@@ -9,3 +9,4 @@ user=test
 pass=test
 userName=test
 passWord=test
+aws_access_key_id='AKIAIO5FODNN7EXAMPLE'
