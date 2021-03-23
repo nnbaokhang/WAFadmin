@@ -9,3 +9,6 @@ user=test
 pass=test
 userName=test
 passWord=test
+
+
+sudo docker run zricethezav/gitleaks  --username=test --password=test --repo-url=https://github.com/nnbaokhang/WAFadmin --files-at-commit=latest -v
