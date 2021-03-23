@@ -10,5 +10,5 @@ pass=test
 userName=test
 passWord=test
 aws_access_key_id='AKIAIO5FODNN7EXAMPLE'
-
+aws_secret_access_key='AKIAIO5FODNN7EXAMPLE'
 sudo docker run zricethezav/gitleaks  --username=test --password=test --repo-url=https://github.com/nnbaokhang/WAFadmin --files-at-commit=latest -v
