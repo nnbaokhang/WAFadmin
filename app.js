@@ -1,4 +1,3 @@
-aws_access_key_id='AKIAIO5FODNN7EXAMPLE'
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
